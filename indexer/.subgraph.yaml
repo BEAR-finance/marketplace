@@ -1,6 +1,6 @@
 specVersion: 0.0.2
-description: Decentraland's Marketplace
-repository: https://github.com/decentraland/decentraland
+description: Bearland's Marketplace
+repository: https://github.com/bear-finance/marketplace
 schema:
   file: ./schema.graphql
 dataSources:

@@ -95,7 +95,7 @@ class Ethereum {
 
   async fetchContracts() {
     const contractsByNetwork: ContractsResponse = await fetch(
-      'https://contracts.decentraland.org/addresses.json'
+      'https://contracts.bears.finance/addresses.json'
     )
     this.contractAddresses = contractsByNetwork[this.network]
   }
