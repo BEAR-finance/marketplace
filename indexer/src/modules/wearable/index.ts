@@ -30,11 +30,14 @@ import {
   moonshot_2020,
   pm_dreamverse_eminence,
   pm_outtathisworld,
+  rac_basics,
   release_the_kraken,
+  rtfkt_x_atari,
   stay_safe,
   sugarclub_yumi,
   tech_tribal_marc0matic,
   threelau_basics,
+  winklevoss_capital,
   wonderzone_meteorchaser,
   wonderzone_steampunk,
   wz_wonderbot,
@@ -83,11 +86,14 @@ export function buildWearableFromNFT(nft: NFT): WearableEntity {
     moonshot_2020,
     pm_dreamverse_eminence,
     pm_outtathisworld,
+    rac_basics,
     release_the_kraken,
+    rtfkt_x_atari,
     stay_safe,
     sugarclub_yumi,
     tech_tribal_marc0matic,
     threelau_basics,
+    winklevoss_capital,
     wonderzone_meteorchaser,
     wonderzone_steampunk,
     wz_wonderbot,
@@ -123,11 +129,14 @@ export function buildWearableFromNFT(nft: NFT): WearableEntity {
     'moonshot_2020',
     'pm_dreamverse_eminence',
     'pm_outtathisworld',
+    'rac_basics',
     'release_the_kraken',
+    'rtfkt_x_atari',
     'stay_safe',
     'sugarclub_yumi',
     'tech_tribal_marc0matic',
     '3lau_basics', // threelau_basics
+    'winklevoss_capital',
     'wonderzone_meteorchaser',
     'wonderzone_steampunk',
     'wz_wonderbot',
@@ -205,7 +214,7 @@ function findWearable(id: string, collection: Wearable[]): WearableEntity {
   return new WearableEntity('')
 }
 
-function getWearableIdFromTokenURI(tokenURI: string): string {
+export function getWearableIdFromTokenURI(tokenURI: string): string {
   let splitted = tokenURI.split('/')
 
   // https://wearable-api.decentraland.org/v2/standards/erc721-metadata/collections/halloween_2019/wearables/funny_skull_mask/1
