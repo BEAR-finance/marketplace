@@ -3,13 +3,13 @@
   "contracts": {
     "MANA": {
       "source": "etherscan",
-      "net": "mainnet",
-      "address": "0x0f5d2fb29fb7d3cfee444a200298f468908cc942"
+      "net": "ropsten",
+      "address": "0xc267090d65b9389c5006d49b2c46b86c71470acb"
     },
     "Marketplace": {
       "source": "etherscan",
-      "net": "mainnet",
-      "address": "0x19a8ed4860007a66805782ed7e0bed4e44fc6717"
+      "net": "ropsten",
+      "address": "0xd075116d6eb21afabfc58fdc8a115c5bf044a0fe"
     },
     "MarketplaceAdapter": {
       "source": "etherscan",
@@ -23,13 +23,13 @@
     },
     "Bids": {
       "source": "etherscan",
-      "net": "mainnet",
-      "address": "0xe479dfd9664c693b2e2992300930b00bfde08233"
+      "net": "ropsten",
+      "address": "0xa5A59E812ec2eEB65f73f997e71EE6126f907Ed3"
     },
     "EstateRegistry": {
       "source": "etherscan",
-      "net": "mainnet",
-      "address": "0x55fd705b431f95c8e09fcf85a245377568cc2c6e"
+      "net": "ropsten",
+      "address": "0xd8dbe60aeb7cd1f04df2fd89e35e418346508672"
     },
     "ERC20": {
       "source": "files",

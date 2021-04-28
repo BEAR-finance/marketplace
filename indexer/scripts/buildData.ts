@@ -66,7 +66,7 @@ async function build() {
 // Parser -----------------------------------------------------------
 
 class TemplateFile {
-  constructor(public ethereum: Ethereum) {}
+  constructor(public ethereum: Ethereum) { }
 
   async write(src: string, destination: string) {
     const contents = await readFile(src)
@@ -95,7 +95,7 @@ class Ethereum {
 
   async fetchContracts() {
     const contractsByNetwork: ContractsResponse = await fetch(
-      'https://contracts.bears.finance/addresses.json'
+      'https://contracts.bears.finance/addresses.json'  // https://contracts.bears.finance/addresses.json - actual one
     )
     this.contractAddresses = contractsByNetwork[this.network]
   }
@@ -128,7 +128,7 @@ class Ethereum {
 }
 
 class Parser {
-  constructor(public text: string, public ethereum: Ethereum) {}
+  constructor(public text: string, public ethereum: Ethereum) { }
 
   parse() {
     let newText = this.replaceNetworks(this.text)
@@ -187,8 +187,8 @@ async function fetch(uri: string, method = 'GET'): Promise<any> {
     port: 443,
     path
   }
-  return new Promise(function(resolve, reject) {
-    const req = https.request(options, function(res) {
+  return new Promise(function (resolve, reject) {
+    const req = https.request(options, function (res) {
       if (res.statusCode < 200 || res.statusCode >= 300) {
         return reject(new Error(`Invalid request: ${res.statusCode}`))
       }

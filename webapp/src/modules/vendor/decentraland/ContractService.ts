@@ -4,15 +4,15 @@ import { NFTCategory } from '../../nft/types'
 import { TransferType } from '../types'
 
 const network = process.env.REACT_APP_NETWORK! as Network
-
+console.log('network', network);
 const contractAddresses = {
   [Network.ROPSTEN]: {
-    MANAToken: '0x2a8fd99c19271f4f04b1b7b9c4f7cf264b626edb',
-    LANDRegistry: '0x7a73483784ab79257bb11b96fd62a2c3ae4fb75b',
-    EstateRegistry: '0x124bf28a423b2ca80b3846c3aa0eb944fe7ebb95',
-    Marketplace: '0x5424912699dabaa5f2998750c1c66e73d67ad219',
-    Bids: '0x250fa138c0a994799c7a49df3097dc71e37b3d6f',
-    DCLRegistrar: '0xeb6f5d94d79f0750781cc962908b161b95192f53',
+    MANAToken: '0xc267090d65b9389c5006d49b2c46b86c71470acb',
+    LANDRegistry: '0xead5be7a17881adc74419565dbd67508979ad2f4',
+    EstateRegistry: '0xd8dbe60aeb7cd1f04df2fd89e35e418346508672',
+    Marketplace: '0xd075116d6eb21afabfc58fdc8a115c5bf044a0fe',
+    Bids: '0xa5A59E812ec2eEB65f73f997e71EE6126f907Ed3',
+    DCLRegistrar: '0x460b01a32b18a1fb1416da2440e54b593c701238',
 
     AtariLaunch: '0x30ae57840b0e9b8ea55334083d53d80b2cfe80e0',
     BinanceUsCollection: '0x30ae57840b0e9b8ea55334083d53d80b2cfe80e0',
@@ -61,7 +61,7 @@ const contractAddresses = {
     XmashUp2020: '0x30ae57840b0e9b8ea55334083d53d80b2cfe80e0'
   },
   [Network.MAINNET]: {
-    MANAToken: '0x0f5d2fb29fb7d3cfee444a200298f468908cc942',
+    MANAToken: '0xc267090d65b9389c5006d49b2c46b86c71470acb',
     LANDRegistry: '0xf87e31492faf9a91b02ee0deaad50d51d56d5d4d',
     EstateRegistry: '0x959e104e1a4db6317fa58f8295f586e1a978c297',
     Marketplace: '0x8e5660b4ab70168b5a6feea0e0315cb49c8cd539',

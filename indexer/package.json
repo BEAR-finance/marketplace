@@ -2,8 +2,8 @@
   "name": "testing",
   "version": "0.1.0",
   "scripts": {
-    "create-local": "graph create decentraland/marketplace --node http://127.0.0.1:8020",
-    "deploy-local": "graph deploy decentraland/marketplace --ipfs http://localhost:5001 --node http://127.0.0.1:8020",
+    "create-local": "graph create bear-finance/marketplace --node http://127.0.0.1:8020",
+    "deploy-local": "graph deploy bear-finance/marketplace --ipfs http://localhost:5001 --node http://127.0.0.1:8020",
     "codegen": "graph codegen --debug --output-dir src/entities/",
     "build": "graph build",
     "build-data": "ts-node ./scripts/buildData.ts",

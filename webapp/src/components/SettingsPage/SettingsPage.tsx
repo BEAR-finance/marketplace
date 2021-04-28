@@ -89,10 +89,10 @@ const SettingsPage = (props: Props) => {
                         {t('settings_page.copied')}
                       </span>
                     ) : (
-                      <span className="copy-text link">
-                        {t('settings_page.copy_address')}
-                      </span>
-                    )}
+                        <span className="copy-text link">
+                          {t('settings_page.copy_address')}
+                        </span>
+                      )}
                   </CopyToClipboard>
                 </div>
               </Grid.Column>
@@ -108,6 +108,7 @@ const SettingsPage = (props: Props) => {
               </Grid.Column>
               <Grid.Column computer={12} mobile={16}>
                 <div className="balance">
+                  {console.log('MANA_obj:', wallet)}
                   <Mana inline>
                     {parseInt(
                       wallet.networks[Network.ETHEREUM].mana.toFixed(0),
@@ -140,104 +141,104 @@ const SettingsPage = (props: Props) => {
                 {isLoadingAuthorization ? (
                   <Loader size="massive" active />
                 ) : (
-                  <div className="authorization-checks-container">
-                    {hasEmptyAuthorizations ? (
-                      <div className="authorization-checks">
-                        <p className="danger-text">
-                          {t('settings_page.authorization_error')}
-                          <br />
-                          {t('settings_page.authorization_error_contact')}
-                        </p>
-                      </div>
-                    ) : (
-                      <Form>
+                    <div className="authorization-checks-container">
+                      {hasEmptyAuthorizations ? (
                         <div className="authorization-checks">
-                          <label className="secondary-text">
-                            {t('settings_page.for_buying')}
-                          </label>
-                          <Authorization
-                            checked={hasAuthorization(
-                              authorizations!,
-                              contractAddresses.Marketplace,
-                              contractAddresses.MANAToken,
-                              AuthorizationType.ALLOWANCE
-                            )}
-                            contractAddress={contractAddresses.Marketplace}
-                            tokenContractAddress={contractAddresses.MANAToken}
-                            pendingTransactions={pendingAllowTransactions}
-                            onChange={onAllowToken}
-                          />
-                          <Authorization
-                            checked={hasAuthorization(
-                              authorizations!,
-                              contractAddresses.MarketplaceAdapter,
-                              contractAddresses.MANAToken,
-                              AuthorizationType.ALLOWANCE
-                            )}
-                            contractAddress={
-                              contractAddresses.MarketplaceAdapter
-                            }
-                            tokenContractAddress={contractAddresses.MANAToken}
-                            pendingTransactions={pendingAllowTransactions}
-                            onChange={onAllowToken}
-                          />
+                          <p className="danger-text">
+                            {t('settings_page.authorization_error')}
+                            <br />
+                            {t('settings_page.authorization_error_contact')}
+                          </p>
                         </div>
+                      ) : (
+                          <Form>
+                            <div className="authorization-checks">
+                              <label className="secondary-text">
+                                {t('settings_page.for_buying')}
+                              </label>
+                              <Authorization
+                                checked={hasAuthorization(
+                                  authorizations!,
+                                  contractAddresses.Marketplace,
+                                  contractAddresses.MANAToken,
+                                  AuthorizationType.ALLOWANCE
+                                )}
+                                contractAddress={contractAddresses.Marketplace}
+                                tokenContractAddress={contractAddresses.MANAToken}
+                                pendingTransactions={pendingAllowTransactions}
+                                onChange={onAllowToken}
+                              />
+                              <Authorization
+                                checked={hasAuthorization(
+                                  authorizations!,
+                                  contractAddresses.MarketplaceAdapter,
+                                  contractAddresses.MANAToken,
+                                  AuthorizationType.ALLOWANCE
+                                )}
+                                contractAddress={
+                                  contractAddresses.MarketplaceAdapter
+                                }
+                                tokenContractAddress={contractAddresses.MANAToken}
+                                pendingTransactions={pendingAllowTransactions}
+                                onChange={onAllowToken}
+                              />
+                            </div>
 
-                        <div className="authorization-checks">
-                          <label className="secondary-text">
-                            {t('settings_page.for_bidding')}
-                          </label>
-                          <Authorization
-                            checked={hasAuthorization(
-                              authorizations!,
-                              contractAddresses.Bids,
-                              contractAddresses.MANAToken,
-                              AuthorizationType.ALLOWANCE
-                            )}
-                            contractAddress={contractAddresses.Bids}
-                            tokenContractAddress={contractAddresses.MANAToken}
-                            pendingTransactions={pendingAllowTransactions}
-                            onChange={onAllowToken}
-                          />
-                        </div>
+                            <div className="authorization-checks">
+                              <label className="secondary-text">
+                                {t('settings_page.for_bidding')}
+                              </label>
+                              <Authorization
+                                checked={hasAuthorization(
+                                  authorizations!,
+                                  contractAddresses.Bids,
+                                  contractAddresses.MANAToken,
+                                  AuthorizationType.ALLOWANCE
+                                )}
+                                contractAddress={contractAddresses.Bids}
+                                tokenContractAddress={contractAddresses.MANAToken}
+                                pendingTransactions={pendingAllowTransactions}
+                                onChange={onAllowToken}
+                              />
+                            </div>
 
-                        <div className="authorization-checks">
-                          <label className="secondary-text">
-                            {t('settings_page.for_selling')}
-                          </label>
+                            <div className="authorization-checks">
+                              <label className="secondary-text">
+                                {t('settings_page.for_selling')}
+                              </label>
 
-                          {Object.keys(authorizations!.approvals).map(
-                            contractAddress => {
-                              const privilege = authorizations!.approvals[
-                                contractAddress
-                              ]
-                              return !privilege
-                                ? null
-                                : Object.keys(
-                                    privilege
-                                  ).map(tokenContractAddress => (
-                                    <Authorization
-                                      key={
-                                        contractAddress + tokenContractAddress
-                                      }
-                                      checked={privilege[tokenContractAddress]}
-                                      contractAddress={contractAddress}
-                                      tokenContractAddress={
-                                        tokenContractAddress
-                                      }
-                                      pendingTransactions={
-                                        pendingApproveTransactions
-                                      }
-                                      onChange={onApproveToken}
-                                    />
-                                  ))
-                            }
-                          )}
-                        </div>
-                      </Form>
-                    )}
-                  </div>
-                )}
+                              {Object.keys(authorizations!.approvals).map(
+                                contractAddress => {
+                                  const privilege = authorizations!.approvals[
+                                    contractAddress
+                                  ]
+                                  return !privilege
+                                    ? null
+                                    : Object.keys(
+                                      privilege
+                                    ).map(tokenContractAddress => (
+                                      <Authorization
+                                        key={
+                                          contractAddress + tokenContractAddress
+                                        }
+                                        checked={privilege[tokenContractAddress]}
+                                        contractAddress={contractAddress}
+                                        tokenContractAddress={
+                                          tokenContractAddress
+                                        }
+                                        pendingTransactions={
+                                          pendingApproveTransactions
+                                        }
+                                        onChange={onApproveToken}
+                                      />
+                                    ))
+                                }
+                              )}
+                            </div>
+                          </Form>
+                        )}
+                    </div>
+                  )}
               </Grid.Column>
             </Grid.Row>
           </Grid>
